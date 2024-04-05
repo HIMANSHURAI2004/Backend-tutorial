@@ -183,8 +183,8 @@ const logoutUser=asyncHandler(async(req,res) =>{
         req.user._id,
         {
             //kya kya update krna h vo hum set me btate h
-            $set:{
-                refreshToken:undefined
+            $unset:{
+                refreshToken:1
             }
         },
         {
